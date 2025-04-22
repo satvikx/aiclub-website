@@ -318,7 +318,7 @@ const Team = () => {
       <section className="py-16 bg-[#0c0c0c]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <Accordion type="single" collapsible defaultValue="2025">
+            <Accordion type="single" collapsible>
               {Object.keys(teamByYear)
                 .sort((a, b) => Number(b) - Number(a))
                 .map((year) => (
