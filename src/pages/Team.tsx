@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Linkedin, GitHub, Mail } from 'lucide-react';
+import { Linkedin, github, Mail } from 'lucide-react';
 
 interface TeamMember {
   id: number;
@@ -296,7 +296,7 @@ const Team = () => {
                         )}
                         {member.socials.github && (
                           <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ai-green transition-colors">
-                            <GitHub size={20} />
+                            <github size={20} />
                           </a>
                         )}
                         {member.socials.email && (
@@ -341,7 +341,7 @@ const Team = () => {
                         )}
                         {member.socials.github && (
                           <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ai-green transition-colors">
-                            <GitHub size={20} />
+                            <github size={20} />
                           </a>
                         )}
                         {member.socials.email && (
