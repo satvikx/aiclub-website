@@ -196,7 +196,6 @@ const Team = () => {
   const [executiveMembers, setExecutiveMembers] = useState<TeamMember[]>([]);
   const [regularMembers, setRegularMembers] = useState<TeamMember[]>([]);
 
-  // Add fade-in effect on scroll
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -220,7 +219,6 @@ const Team = () => {
     const filtered = teamData.filter(member => member.year === selectedYear);
     setFilteredTeam(filtered);
     
-    // Separate executive and regular members
     setExecutiveMembers(filtered.filter(member => member.isExecutive));
     setRegularMembers(filtered.filter(member => !member.isExecutive));
   }, [selectedYear]);
@@ -233,7 +231,6 @@ const Team = () => {
     <div className="min-h-screen bg-ai-black">
       <Navbar />
 
-      {/* Hero Section */}
       <section className="pt-32 pb-16 bg-ai-black">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -247,11 +244,9 @@ const Team = () => {
         </div>
       </section>
 
-      {/* Team Section */}
       <section className="py-16 bg-[#0c0c0c]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            {/* Filter Controls */}
             <div className="flex justify-end mb-10 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
               <div className="relative">
                 <select 
@@ -271,7 +266,6 @@ const Team = () => {
               </div>
             </div>
 
-            {/* Executive Team Members */}
             <div className="mb-16">
               <h2 className="text-2xl font-bold font-orbitron text-ai-white mb-8 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
                 Executive <span className="text-ai-green">Team</span>
@@ -317,7 +311,6 @@ const Team = () => {
               </div>
             </div>
 
-            {/* Other Team Members */}
             <div>
               <h2 className="text-2xl font-bold font-orbitron text-ai-white mb-8 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
                 Team <span className="text-ai-green">Members</span>

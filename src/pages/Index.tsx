@@ -3,6 +3,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Instagram as InstagramIcon, Linkedin as LinkedinIcon, Facebook as FacebookIcon, Youtube as YoutubeIcon } from 'lucide-react';
 
 const Index = () => {
   // Add fade-in effect on scroll
@@ -363,25 +364,25 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
               className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_15px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
-              <Instagram size={40} className="text-ai-green mb-4" />
+              <InstagramIcon size={40} className="text-ai-green mb-4" />
               <span className="text-ai-white font-orbitron font-medium">Instagram</span>
             </a>
             
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
               className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_15px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
-              <Linkedin size={40} className="text-ai-green mb-4" />
+              <LinkedinIcon size={40} className="text-ai-green mb-4" />
               <span className="text-ai-white font-orbitron font-medium">LinkedIn</span>
             </a>
             
             <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
               className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_15px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
-              <Facebook size={40} className="text-ai-green mb-4" />
+              <FacebookIcon size={40} className="text-ai-green mb-4" />
               <span className="text-ai-white font-orbitron font-medium">Facebook</span>
             </a>
             
             <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" 
               className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_15px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 delay-300 animate-on-scroll">
-              <Youtube size={40} className="text-ai-green mb-4" />
+              <YoutubeIcon size={40} className="text-ai-green mb-4" />
               <span className="text-ai-white font-orbitron font-medium">YouTube</span>
             </a>
           </div>
