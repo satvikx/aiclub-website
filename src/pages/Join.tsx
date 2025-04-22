@@ -30,24 +30,52 @@ const Join = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      const formDataObj = new FormData(e.target as HTMLFormElement);
+      
+      // Add the web3forms access key
+      formDataObj.append("access_key", "bd1c7ebc-830b-4d5d-950b-3f1d5124ec97");
+      
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataObj
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        toast({
+          title: "Application Submitted!",
+          description: "We'll review your application and get back to you soon.",
+        });
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          semester: '',
+          branch: '',
+          whyJoin: '',
+          experience: '',
+          expectations: ''
+        });
+      } else {
+        console.log("Error", data);
+        toast({
+          title: "Error",
+          description: data.message || "Something went wrong. Please try again.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
       toast({
-        title: "Application Submitted!",
-        description: "We'll review your application and get back to you soon.",
+        title: "Error",
+        description: "Failed to submit your application. Please try again later.",
+        variant: "destructive"
       });
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        semester: '',
-        branch: '',
-        whyJoin: '',
-        experience: '',
-        expectations: ''
-      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -291,10 +319,11 @@ const Join = () => {
                     className="w-full bg-[#222] border border-gray-800 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-ai-green appearance-none"
                   >
                     <option value="">Select your branch</option>
+                    <option value="Computer Science">CSE AIML</option>
                     <option value="Computer Science">Computer Science</option>
                     <option value="Information Technology">Information Technology</option>
                     <option value="Electronics">Electronics</option>
-                    <option value="Electrical">Electrical</option>
+                    {/* <option value="Electrical">Electrical</option> */}
                     <option value="Mechanical">Mechanical</option>
                     <option value="Civil">Civil</option>
                     <option value="Other">Other</option>

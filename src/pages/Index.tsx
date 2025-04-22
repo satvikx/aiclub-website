@@ -104,7 +104,7 @@ const Index = () => {
                   <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-orbitron font-bold mb-2 text-ai-white">100+ Members</h3>
+              <h3 className="text-xl font-orbitron font-bold mb-2 text-ai-white">1000+ Members</h3>
               <p className="text-gray-400">
                 Our club consists of diverse students passionate about AI from various disciplines.
               </p>
@@ -127,7 +127,7 @@ const Index = () => {
                   <circle cx="12" cy="12" r="10"></circle>
                 </svg>
               </div>
-              <h3 className="text-xl font-orbitron font-bold mb-2 text-ai-white">20+ Events</h3>
+              <h3 className="text-xl font-orbitron font-bold mb-2 text-ai-white">10+ Events</h3>
               <p className="text-gray-400">
                 We organize workshops, hackathons, and coding contests throughout the academic year.
               </p>
@@ -318,7 +318,7 @@ const Index = () => {
                   <div className="absolute -inset-1 bg-ai-green opacity-20 blur-lg rounded-lg"></div>
                   <div className="relative bg-[#1a1a1a] p-4 rounded-lg border border-gray-800">
                     <img 
-                      src="https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=600&q=80" 
+                      src="https://ik.imagekit.io/satvik/AIC/Satvik.jpg" 
                       alt="AI Insights Magazine Cover" 
                       className="w-full h-auto rounded"
                     />
@@ -331,15 +331,15 @@ const Index = () => {
                   Annual <span className="text-ai-green">Magazine</span>
                 </h2>
                 <p className="text-lg text-gray-300 mb-8">
-                  Our annual publication "AI Insights" showcases the best projects, research papers, and 
+                  Our annual publication "Edge AI" showcases the best projects, research papers, and 
                   articles from our community. Explore cutting-edge AI innovations, industry trends, and 
                   insights from leading experts in the field.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <a href="#" className="btn-primary">
+                  <a href="https://drive.google.com/uc?export=download&id=1AouG6oSi9FJqxgCdS20J2fAw6Yk1_j0R" className="btn-primary">
                     Download
                   </a>
-                  <a href="#" className="border-2 border-ai-green text-ai-green font-orbitron font-semibold px-6 py-2 rounded transition-all hover:bg-ai-green hover:text-ai-black">
+                  <a href="https://drive.google.com/file/d/1AouG6oSi9FJqxgCdS20J2fAw6Yk1_j0R/view" className="border-2 border-ai-green text-ai-green font-orbitron font-semibold px-6 py-2 rounded transition-all hover:bg-ai-green hover:text-ai-black">
                     View Online
                   </a>
                 </div>
@@ -362,13 +362,13 @@ const Index = () => {
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://instagram.com/aicluboist" target="_blank" rel="noopener noreferrer" 
               className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_15px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
               <InstagramIcon size={40} className="text-ai-green mb-4" />
               <span className="text-ai-white font-orbitron font-medium">Instagram</span>
             </a>
             
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://www.linkedin.com/company/103163427" target="_blank" rel="noopener noreferrer" 
               className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_15px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
               <LinkedinIcon size={40} className="text-ai-green mb-4" />
               <span className="text-ai-white font-orbitron font-medium">LinkedIn</span>
@@ -380,7 +380,7 @@ const Index = () => {
               <span className="text-ai-white font-orbitron font-medium">Facebook</span>
             </a>
             
-            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" 
+            <a href="https://youtube.com/@aicluboist" target="_blank" rel="noopener noreferrer" 
               className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_15px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 delay-300 animate-on-scroll">
               <YoutubeIcon size={40} className="text-ai-green mb-4" />
               <span className="text-ai-white font-orbitron font-medium">YouTube</span>

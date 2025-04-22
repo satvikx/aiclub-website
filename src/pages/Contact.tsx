@@ -27,21 +27,48 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulate form submission
-    setTimeout(() => {
-      // Web3Forms would be implemented here in a real application
+    try {
+      const formDataObj = new FormData(e.target as HTMLFormElement);
+      
+      // Add the web3forms access key
+      formDataObj.append("access_key", "bd1c7ebc-830b-4d5d-950b-3f1d5124ec97");
+      
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataObj
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        toast({
+          title: "Message Sent!",
+          description: "We'll get back to you as soon as possible.",
+        });
+        setFormData({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+      } else {
+        console.log("Error", data);
+        toast({
+          title: "Error",
+          description: data.message || "Something went wrong. Please try again.",
+          variant: "destructive"
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting form:", error);
       toast({
-        title: "Message Sent!",
-        description: "We'll get back to you as soon as possible.",
+        title: "Error",
+        description: "Failed to send your message. Please try again later.",
+        variant: "destructive"
       });
-      setFormData({
-        name: '',
-        email: '',
-        subject: '',
-        message: ''
-      });
+    } finally {
       setIsSubmitting(false);
-    }, 1500);
+    }
   };
 
   return (
@@ -165,19 +192,19 @@ const Contact = () => {
                   
                   <div className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800">
                     <h3 className="font-orbitron text-lg font-medium text-ai-white mb-4">Email</h3>
-                    <a href="mailto:aiclub@oist.edu.in" className="text-gray-300 hover:text-ai-green transition-colors">
-                      aiclub@oist.edu.in
+                    <a href="mailto:aiclub@oriental.ac.in" className="text-gray-300 hover:text-ai-green transition-colors">
+                      aiclub@oriental.ac.in
                     </a>
                   </div>
                   
                   <div className="bg-[#1a1a1a] p-6 rounded-lg border border-gray-800">
                     <h3 className="font-orbitron text-lg font-medium text-ai-white mb-4">Social Media</h3>
                     <div className="flex space-x-4">
-                      <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" 
+                      <a href="https://instagram.com/aicluboist" target="_blank" rel="noopener noreferrer" 
                         className="text-gray-400 hover:text-ai-green transition-colors">
                         <Instagram size={24} />
                       </a>
-                      <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"
+                      <a href="https://www.linkedin.com/company/103163427" target="_blank" rel="noopener noreferrer"
                         className="text-gray-400 hover:text-ai-green transition-colors">
                         <Linkedin size={24} />
                       </a>
@@ -185,7 +212,7 @@ const Contact = () => {
                         className="text-gray-400 hover:text-ai-green transition-colors">
                         <Facebook size={24} />
                       </a>
-                      <a href="https://youtube.com" target="_blank" rel="noopener noreferrer"
+                      <a href="https://youtube.com/@aicluboist" target="_blank" rel="noopener noreferrer"
                         className="text-gray-400 hover:text-ai-green transition-colors">
                         <Youtube size={24} />
                       </a>
@@ -202,11 +229,13 @@ const Contact = () => {
       <section className="py-16 bg-[#0a0a0a]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="bg-[#1a1a1a] p-4 rounded-lg border border-gray-800 overflow-hidden h-[400px] flex items-center justify-center">
-              <div className="text-center">
-                <p className="text-gray-400 mb-2">Map would be displayed here in a real implementation.</p>
-                <p className="text-gray-500 text-sm">Oriental Institute of Science and Technology, Bhopal</p>
-              </div>
+            <div className="bg-[#1a1a1a] p-4 rounded-lg border border-gray-800 overflow-hidden w-full h-[400px] flex items-center justify-center">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1884298.0637702537!2d75.8582809078481!3d22.718216548372837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c41e4394f4f87%3A0xb3bba34206ce5dec!2sOriental%20Institute%20of%20Science%20%26%20Technology%20%7C%20Best%20Engineering%20Institute%20in%20Central%20India!5e0!3m2!1sen!2sin!4v1745321160166!5m2!1sen!2sin" 
+            width="100%"
+            height="100%"
+            // class="w-full h-full border-0"
+            // allowfullscreen="" 
+            loading="lazy"></iframe>
             </div>
           </div>
         </div>

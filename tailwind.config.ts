@@ -72,6 +72,8 @@ export default {
 			fontFamily: {
 				'orbitron': ['Orbitron', 'sans-serif'],
 				'roboto': ['Roboto', 'sans-serif'],
+				'chivo': ['Chivo', 'sans-serif'],
+				'ubuntu': ['Ubuntu', 'sans-serif'],
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

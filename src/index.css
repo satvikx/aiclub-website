@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Roboto:wght@300;400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -92,7 +92,7 @@
   }
 
   body {
-    @apply bg-ai-black text-ai-white font-roboto;
+    @apply bg-ai-black text-ai-white font-ubuntu;
   }
 
   h1, h2, h3, h4, h5, h6 {

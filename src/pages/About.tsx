@@ -94,7 +94,7 @@ const About = () => {
             <div className="relative border-l-2 border-ai-green pl-10 ml-6">
               <div className="mb-16 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
                 <div className="absolute -left-[9px] mt-2.5 h-4 w-4 rounded-full bg-ai-green"></div>
-                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2">2022 - Inception</h3>
+                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2 mx-5">2022 - Inception</h3>
                 <p className="text-gray-300 mb-4">
                   The AI Club was established with a vision to create a collaborative space for students 
                   passionate about artificial intelligence and its applications.
@@ -106,9 +106,9 @@ const About = () => {
 
               <div className="mb-16 opacity-0 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
                 <div className="absolute -left-[9px] mt-2.5 h-4 w-4 rounded-full bg-ai-green"></div>
-                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2">2023 - Growth</h3>
+                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2 mx-5">2023 - Growth</h3>
                 <p className="text-gray-300 mb-4">
-                  Expanded activities to include industry partnerships, hackathons, and guest lectures 
+                  Expanded activities to include industry partnerships, hackathons, and TEDx 2023 event 
                   from leading AI researchers and practitioners.
                 </p>
                 <p className="text-gray-300">
@@ -118,21 +118,21 @@ const About = () => {
 
               <div className="mb-16 opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
                 <div className="absolute -left-[9px] mt-2.5 h-4 w-4 rounded-full bg-ai-green"></div>
-                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2">2024 - Innovation</h3>
+                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2 mx-5">2024 - Innovation</h3>
                 <p className="text-gray-300 mb-4">
-                  Launched groundbreaking initiatives including the AI Research Fellowship and 
+                  Launched groundbreaking initiatives including the Ninja Quest Test Series and 
                   the annual AI Innovation Summit.
                 </p>
                 <p className="text-gray-300">
-                  Established partnerships with leading tech companies and research institutions.
+                  Promoted the Tech Culture in the Campus Space.
                 </p>
               </div>
 
               <div className="opacity-0 translate-y-10 transition-all duration-700 delay-300 animate-on-scroll">
                 <div className="absolute -left-[9px] mt-2.5 h-4 w-4 rounded-full bg-ai-green"></div>
-                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2">2025 - Present</h3>
+                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2 mx-5">2025 - Present</h3>
                 <p className="text-gray-300 mb-4">
-                  Expanding globally through virtual events and international collaborations while 
+                  Expanding through virtual events and valuable collaborations while 
                   maintaining our commitment to cutting-edge AI education and research.
                 </p>
                 <p className="text-gray-300">
@@ -233,27 +233,27 @@ const About = () => {
             <div className="bg-white bg-opacity-5 p-6 rounded-lg flex items-center justify-center opacity-0 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
               <div className="text-center">
                 <div className="bg-white p-4 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                  <span className="text-ai-black font-orbitron font-bold text-lg">TI</span>
+                  <span className="text-ai-black font-orbitron font-bold text-lg">CN</span>
                 </div>
-                <p className="text-white text-sm">Tech Innovators</p>
+                <p className="text-white text-sm">Coding Ninjas</p>
               </div>
             </div>
             
             <div className="bg-white bg-opacity-5 p-6 rounded-lg flex items-center justify-center opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
               <div className="text-center">
                 <div className="bg-white p-4 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                  <span className="text-ai-black font-orbitron font-bold text-lg">DS</span>
+                  <span className="text-ai-black font-orbitron font-bold text-lg">GfG</span>
                 </div>
-                <p className="text-white text-sm">Data Sciences Corp</p>
+                <p className="text-white text-sm">Geeks for Geeks</p>
               </div>
             </div>
             
             <div className="bg-white bg-opacity-5 p-6 rounded-lg flex items-center justify-center opacity-0 translate-y-10 transition-all duration-700 delay-300 animate-on-scroll">
               <div className="text-center">
                 <div className="bg-white p-4 rounded-full w-16 h-16 mx-auto mb-3 flex items-center justify-center">
-                  <span className="text-ai-black font-orbitron font-bold text-lg">AI</span>
+                  <span className="text-ai-black font-orbitron font-bold text-lg">TED</span>
                 </div>
-                <p className="text-white text-sm">AI Research Foundation</p>
+                <p className="text-white text-sm">TEDx Inc.</p>
               </div>
             </div>
           </div>
