@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -24,89 +25,90 @@ interface TeamMember {
   isExecutive: boolean;
 }
 
+// Updated to include 2025 team members
 const teamData: TeamMember[] = [
-  // 2023 Team
+  // 2025 Team
   {
-    id: 1,
-    name: "Ananya Sharma",
+    id: 13,
+    name: "Maya Chen",
     position: "President",
-    photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=256&q=80",
-    bio: "Computer Science graduate with a passion for AI and machine learning. Led multiple research projects in computer vision.",
+    photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=256&q=80",
+    bio: "PhD candidate in AI and robotics with a focus on human-robot interaction. Led groundbreaking research in embodied intelligence.",
     socials: {
       linkedin: "https://linkedin.com",
       github: "https://github.com",
-      email: "ananya@aiclub.com"
+      email: "maya@aiclub.com"
     },
-    year: "2023",
+    year: "2025",
     isExecutive: true
   },
   {
-    id: 2,
-    name: "Rahul Patel",
+    id: 14,
+    name: "Zain Ahmed",
     position: "Vice President",
-    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=256&q=80",
-    bio: "AI researcher specializing in natural language processing and generative models. Published in top AI conferences.",
+    photo: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=256&q=80",
+    bio: "AI ethics researcher specializing in fairness and transparency in machine learning systems. Published author on AI governance.",
     socials: {
       linkedin: "https://linkedin.com",
       github: "https://github.com",
-      email: "rahul@aiclub.com"
+      email: "zain@aiclub.com"
     },
-    year: "2023",
+    year: "2025",
     isExecutive: true
   },
   {
-    id: 3,
-    name: "Priya Singh",
+    id: 15,
+    name: "Sophia Kim",
     position: "Secretary",
-    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=256&q=80",
-    bio: "Data scientist with expertise in statistical analysis and predictive modeling. Passionate about AI ethics.",
+    photo: "https://images.unsplash.com/photo-1563620915-8478189e41c9?auto=format&fit=crop&w=256&q=80",
+    bio: "Computational linguist with expertise in multilingual NLP. Developed award-winning language models for low-resource languages.",
     socials: {
       linkedin: "https://linkedin.com",
       github: "https://github.com",
-      email: "priya@aiclub.com"
+      email: "sophia@aiclub.com"
     },
-    year: "2023",
+    year: "2025",
     isExecutive: true
   },
   {
-    id: 4,
-    name: "Vikram Mehta",
+    id: 16,
+    name: "Leo Martinez",
     position: "Technical Lead",
-    photo: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=256&q=80",
-    bio: "Full-stack developer with expertise in AI-powered web applications. Led the development of the club's project management platform.",
+    photo: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=256&q=80",
+    bio: "Full-stack AI engineer specializing in production ML systems. Previously worked at leading AI research laboratories.",
     socials: {
       linkedin: "https://linkedin.com",
       github: "https://github.com",
-      email: "vikram@aiclub.com"
+      email: "leo@aiclub.com"
     },
-    year: "2023",
+    year: "2025",
     isExecutive: false
   },
   {
-    id: 5,
-    name: "Neha Gupta",
+    id: 17,
+    name: "Amara Okafor",
     position: "Events Coordinator",
-    photo: "https://images.unsplash.com/photo-1542596768-5d1d21f1cf98?auto=format&fit=crop&w=256&q=80",
-    bio: "Marketing specialist with a background in event management. Organized the successful Cypher 30 Coding Contest.",
+    photo: "https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?auto=format&fit=crop&w=256&q=80",
+    bio: "Community building expert with experience in organizing tech conferences. Passionate about creating inclusive AI education opportunities.",
     socials: {
       linkedin: "https://linkedin.com",
-      email: "neha@aiclub.com"
+      email: "amara@aiclub.com"
     },
-    year: "2023",
+    year: "2025",
     isExecutive: false
   },
   {
-    id: 6,
-    name: "Arjun Kumar",
+    id: 18,
+    name: "Ravi Patel",
     position: "Content Creator",
-    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=256&q=80",
-    bio: "Digital media enthusiast and content creator. Manages the club's blog and social media channels.",
+    photo: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=256&q=80",
+    bio: "Digital media specialist and AI educator. Creates accessible content explaining complex AI concepts through various media formats.",
     socials: {
       linkedin: "https://linkedin.com",
       github: "https://github.com",
-      email: "arjun@aiclub.com"
+      email: "ravi@aiclub.com"
     },
-    year: "2023",
+    year: "2025",
     isExecutive: false
   },
 
@@ -192,6 +194,91 @@ const teamData: TeamMember[] = [
       email: "divya@aiclub.com"
     },
     year: "2024",
+    isExecutive: false
+  },
+
+  // 2023 Team
+  {
+    id: 1,
+    name: "Ananya Sharma",
+    position: "President",
+    photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=256&q=80",
+    bio: "Computer Science graduate with a passion for AI and machine learning. Led multiple research projects in computer vision.",
+    socials: {
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+      email: "ananya@aiclub.com"
+    },
+    year: "2023",
+    isExecutive: true
+  },
+  {
+    id: 2,
+    name: "Rahul Patel",
+    position: "Vice President",
+    photo: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=256&q=80",
+    bio: "AI researcher specializing in natural language processing and generative models. Published in top AI conferences.",
+    socials: {
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+      email: "rahul@aiclub.com"
+    },
+    year: "2023",
+    isExecutive: true
+  },
+  {
+    id: 3,
+    name: "Priya Singh",
+    position: "Secretary",
+    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=256&q=80",
+    bio: "Data scientist with expertise in statistical analysis and predictive modeling. Passionate about AI ethics.",
+    socials: {
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+      email: "priya@aiclub.com"
+    },
+    year: "2023",
+    isExecutive: true
+  },
+  {
+    id: 4,
+    name: "Vikram Mehta",
+    position: "Technical Lead",
+    photo: "https://images.unsplash.com/photo-1531384441138-2736e62e0919?auto=format&fit=crop&w=256&q=80",
+    bio: "Full-stack developer with expertise in AI-powered web applications. Led the development of the club's project management platform.",
+    socials: {
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+      email: "vikram@aiclub.com"
+    },
+    year: "2023",
+    isExecutive: false
+  },
+  {
+    id: 5,
+    name: "Neha Gupta",
+    position: "Events Coordinator",
+    photo: "https://images.unsplash.com/photo-1542596768-5d1d21f1cf98?auto=format&fit=crop&w=256&q=80",
+    bio: "Marketing specialist with a background in event management. Organized the successful Cypher 30 Coding Contest.",
+    socials: {
+      linkedin: "https://linkedin.com",
+      email: "neha@aiclub.com"
+    },
+    year: "2023",
+    isExecutive: false
+  },
+  {
+    id: 6,
+    name: "Arjun Kumar",
+    position: "Content Creator",
+    photo: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=256&q=80",
+    bio: "Digital media enthusiast and content creator. Manages the club's blog and social media channels.",
+    socials: {
+      linkedin: "https://linkedin.com",
+      github: "https://github.com",
+      email: "arjun@aiclub.com"
+    },
+    year: "2023",
     isExecutive: false
   }
 ];

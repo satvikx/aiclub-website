@@ -1,5 +1,5 @@
-
 import React, { useState, useEffect } from 'react';
+import { X } from 'lucide-react';
 import { Dialog } from '@/components/ui/dialog';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -77,7 +77,6 @@ const Events = () => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [selectedEvent, setSelectedEvent] = useState<Event | null>(null);
 
-  // Add fade-in effect on scroll
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -114,11 +113,14 @@ const Events = () => {
     setIsModalOpen(true);
   };
 
+  const closeEventModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="min-h-screen bg-ai-black">
       <Navbar />
 
-      {/* Hero Section */}
       <section className="pt-32 pb-16 bg-ai-black">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -132,11 +134,9 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Events Filter and List */}
       <section className="py-16 bg-[#0c0c0c]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            {/* Filter Controls */}
             <div className="flex justify-end mb-10 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
               <div className="relative">
                 <select 
@@ -157,7 +157,6 @@ const Events = () => {
               </div>
             </div>
 
-            {/* Events Grid */}
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {filteredEvents.map((event, index) => (
                 <div 
@@ -215,29 +214,16 @@ const Events = () => {
         </div>
       </section>
 
-      {/* Event Detail Modal */}
       {selectedEvent && (
         <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
           <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-70">
             <div className="bg-[#1a1a1a] max-w-2xl w-full rounded-lg overflow-hidden relative">
               <button 
-                onClick={() => setIsModalOpen(false)}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white"
+                onClick={closeEventModal}
+                className="absolute top-4 right-4 text-gray-400 hover:text-white z-10"
+                aria-label="Close modal"
               >
-                <svg 
-                  xmlns="http://www.w3.org/2000/svg" 
-                  width="24" 
-                  height="24" 
-                  viewBox="0 0 24 24" 
-                  fill="none" 
-                  stroke="currentColor" 
-                  strokeWidth="2" 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round"
-                >
-                  <line x1="18" y1="6" x2="6" y2="18"></line>
-                  <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
+                <X size={24} />
               </button>
               <div className="h-56 overflow-hidden">
                 <img 
@@ -255,7 +241,7 @@ const Events = () => {
                 <p className="text-gray-300 mb-6">{selectedEvent.longDescription}</p>
                 <div className="flex justify-end">
                   <button 
-                    onClick={() => setIsModalOpen(false)}
+                    onClick={closeEventModal}
                     className="text-gray-400 hover:text-ai-green"
                   >
                     Close
