@@ -1,7 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { Linkedin, Github, Mail } from 'lucide-react';
+import { Linkedin, Github, Mail, ChevronDown } from 'lucide-react';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 interface TeamMember {
   id: number;
@@ -191,41 +197,19 @@ const teamData: TeamMember[] = [
 ];
 
 const Team = () => {
-  const [filteredTeam, setFilteredTeam] = useState<TeamMember[]>([]);
-  const [selectedYear, setSelectedYear] = useState<string>("2024");
-  const [executiveMembers, setExecutiveMembers] = useState<TeamMember[]>([]);
-  const [regularMembers, setRegularMembers] = useState<TeamMember[]>([]);
+  const [teamByYear, setTeamByYear] = useState<{ [key: string]: TeamMember[] }>({});
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100');
-          entry.target.classList.add('translate-y-0');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+    const grouped = teamData.reduce((acc, member) => {
+      if (!acc[member.year]) {
+        acc[member.year] = [];
+      }
+      acc[member.year].push(member);
+      return acc;
+    }, {} as { [key: string]: TeamMember[] });
 
-    const hiddenElements = document.querySelectorAll('.animate-on-scroll');
-    hiddenElements.forEach((el) => observer.observe(el));
-
-    return () => {
-      hiddenElements.forEach((el) => observer.unobserve(el));
-    };
+    setTeamByYear(grouped);
   }, []);
-
-  useEffect(() => {
-    const filtered = teamData.filter(member => member.year === selectedYear);
-    setFilteredTeam(filtered);
-    
-    setExecutiveMembers(filtered.filter(member => member.isExecutive));
-    setRegularMembers(filtered.filter(member => !member.isExecutive));
-  }, [selectedYear]);
-
-  const handleYearChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setSelectedYear(e.target.value);
-  };
 
   return (
     <div className="min-h-screen bg-ai-black">
@@ -247,120 +231,57 @@ const Team = () => {
       <section className="py-16 bg-[#0c0c0c]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <div className="flex justify-end mb-10 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
-              <div className="relative">
-                <select 
-                  value={selectedYear}
-                  onChange={handleYearChange}
-                  className="appearance-none bg-[#1a1a1a] border border-gray-800 text-ai-white py-2 px-4 pr-8 rounded-md focus:outline-none focus:ring-2 focus:ring-ai-green"
-                >
-                  <option value="2023">2023</option>
-                  <option value="2024">2024</option>
-                  <option value="2025">2025</option>
-                </select>
-                <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-ai-white">
-                  <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                    <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                  </svg>
-                </div>
-              </div>
-            </div>
-
-            <div className="mb-16">
-              <h2 className="text-2xl font-bold font-orbitron text-ai-white mb-8 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
-                Executive <span className="text-ai-green">Team</span>
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {executiveMembers.map((member, index) => (
-                  <div 
-                    key={member.id}
-                    className="bg-[#1a1a1a] rounded-lg overflow-hidden border border-gray-800 hover:shadow-[0_0_15px_rgba(199,242,65,0.3)] transition-all opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll"
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    <div className="h-64 overflow-hidden">
-                      <img 
-                        src={member.photo} 
-                        alt={member.name} 
-                        className="w-full h-full object-cover object-center"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold font-orbitron text-ai-white mb-1">{member.name}</h3>
-                      <p className="text-ai-green font-medium mb-4">{member.position}</p>
-                      <p className="text-gray-400 mb-4">{member.bio}</p>
-                      <div className="flex space-x-3">
-                        {member.socials.linkedin && (
-                          <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ai-green transition-colors">
-                            <Linkedin size={20} />
-                          </a>
-                        )}
-                        {member.socials.github && (
-                          <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ai-green transition-colors">
-                            <Github size={20} />
-                          </a>
-                        )}
-                        {member.socials.email && (
-                          <a href={`mailto:${member.socials.email}`} className="text-gray-400 hover:text-ai-green transition-colors">
-                            <Mail size={20} />
-                          </a>
-                        )}
+            <Accordion type="single" collapsible defaultValue="2025">
+              {Object.keys(teamByYear)
+                .sort((a, b) => Number(b) - Number(a))
+                .map((year) => (
+                  <AccordionItem key={year} value={year}>
+                    <AccordionTrigger className="text-2xl font-bold font-orbitron text-ai-white">
+                      {year} Team
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+                        {teamByYear[year].map((member) => (
+                          <div
+                            key={member.id}
+                            className="bg-[#1a1a1a] rounded-lg overflow-hidden border border-gray-800 hover:shadow-[0_0_15px_rgba(199,242,65,0.3)] transition-all"
+                          >
+                            <div className="h-64 overflow-hidden">
+                              <img
+                                src={member.photo}
+                                alt={member.name}
+                                className="w-full h-full object-cover object-center"
+                              />
+                            </div>
+                            <div className="p-6">
+                              <h3 className="text-xl font-bold font-orbitron text-ai-white mb-1">{member.name}</h3>
+                              <p className="text-ai-green font-medium mb-4">{member.position}</p>
+                              <p className="text-gray-400 mb-4">{member.bio}</p>
+                              <div className="flex space-x-3">
+                                {member.socials.linkedin && (
+                                  <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ai-green transition-colors">
+                                    <Linkedin size={20} />
+                                  </a>
+                                )}
+                                {member.socials.github && (
+                                  <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ai-green transition-colors">
+                                    <Github size={20} />
+                                  </a>
+                                )}
+                                {member.socials.email && (
+                                  <a href={`mailto:${member.socials.email}`} className="text-gray-400 hover:text-ai-green transition-colors">
+                                    <Mail size={20} />
+                                  </a>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                        ))}
                       </div>
-                    </div>
-                  </div>
+                    </AccordionContent>
+                  </AccordionItem>
                 ))}
-              </div>
-            </div>
-
-            <div>
-              <h2 className="text-2xl font-bold font-orbitron text-ai-white mb-8 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
-                Team <span className="text-ai-green">Members</span>
-              </h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {regularMembers.map((member, index) => (
-                  <div 
-                    key={member.id}
-                    className="bg-[#1a1a1a] rounded-lg overflow-hidden border border-gray-800 hover:shadow-[0_0_15px_rgba(199,242,65,0.3)] transition-all opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll"
-                    style={{ transitionDelay: `${index * 100}ms` }}
-                  >
-                    <div className="h-64 overflow-hidden">
-                      <img 
-                        src={member.photo} 
-                        alt={member.name} 
-                        className="w-full h-full object-cover object-center"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <h3 className="text-xl font-bold font-orbitron text-ai-white mb-1">{member.name}</h3>
-                      <p className="text-ai-green font-medium mb-4">{member.position}</p>
-                      <p className="text-gray-400 mb-4">{member.bio}</p>
-                      <div className="flex space-x-3">
-                        {member.socials.linkedin && (
-                          <a href={member.socials.linkedin} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ai-green transition-colors">
-                            <Linkedin size={20} />
-                          </a>
-                        )}
-                        {member.socials.github && (
-                          <a href={member.socials.github} target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-ai-green transition-colors">
-                            <Github size={20} />
-                          </a>
-                        )}
-                        {member.socials.email && (
-                          <a href={`mailto:${member.socials.email}`} className="text-gray-400 hover:text-ai-green transition-colors">
-                            <Mail size={20} />
-                          </a>
-                        )}
-                      </div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {filteredTeam.length === 0 && (
-              <div className="text-center py-16">
-                <p className="text-gray-400 text-lg">No team data available for the selected year.</p>
-              </div>
-            )}
+            </Accordion>
           </div>
         </div>
       </section>

@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -95,50 +94,49 @@ const About = () => {
             <div className="relative border-l-2 border-ai-green pl-10 ml-6">
               <div className="mb-16 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
                 <div className="absolute -left-[9px] mt-2.5 h-4 w-4 rounded-full bg-ai-green"></div>
-                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2">2021 - Inception</h3>
+                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2">2022 - Inception</h3>
                 <p className="text-gray-300 mb-4">
-                  The AI Club was founded by a group of passionate computer science students at OIST who 
-                  recognized the growing importance of AI in various fields.
+                  The AI Club was established with a vision to create a collaborative space for students 
+                  passionate about artificial intelligence and its applications.
                 </p>
                 <p className="text-gray-300">
-                  Initial workshops were organized to introduce students to the basics of machine learning and data science.
+                  Initial focus was on building a strong foundation through workshops and study groups.
                 </p>
               </div>
 
               <div className="mb-16 opacity-0 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
                 <div className="absolute -left-[9px] mt-2.5 h-4 w-4 rounded-full bg-ai-green"></div>
-                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2">2022 - Growth</h3>
+                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2">2023 - Growth</h3>
                 <p className="text-gray-300 mb-4">
-                  The club expanded its activities to include hackathons, coding contests, and guest lectures 
-                  from industry professionals.
+                  Expanded activities to include industry partnerships, hackathons, and guest lectures 
+                  from leading AI researchers and practitioners.
                 </p>
                 <p className="text-gray-300">
-                  Membership tripled as interest in AI continued to grow among students from various departments.
+                  Membership quadrupled as we introduced specialized tracks in machine learning, computer vision, and NLP.
                 </p>
               </div>
 
               <div className="mb-16 opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
                 <div className="absolute -left-[9px] mt-2.5 h-4 w-4 rounded-full bg-ai-green"></div>
-                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2">2023 - Recognition</h3>
+                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2">2024 - Innovation</h3>
                 <p className="text-gray-300 mb-4">
-                  The club gained recognition for its initiatives, including the successful Cypher 30 
-                  Coding Contest and collaborative projects with industry partners.
+                  Launched groundbreaking initiatives including the AI Research Fellowship and 
+                  the annual AI Innovation Summit.
                 </p>
                 <p className="text-gray-300">
-                  Launched the annual AI Insights Magazine to showcase projects and research by club members.
+                  Established partnerships with leading tech companies and research institutions.
                 </p>
               </div>
 
               <div className="opacity-0 translate-y-10 transition-all duration-700 delay-300 animate-on-scroll">
                 <div className="absolute -left-[9px] mt-2.5 h-4 w-4 rounded-full bg-ai-green"></div>
-                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2">2024 - Present</h3>
+                <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2">2025 - Present</h3>
                 <p className="text-gray-300 mb-4">
-                  The AI Club continues to evolve with a focus on specialized training, industry collaboration, 
-                  and impactful AI projects that address real-world challenges.
+                  Expanding globally through virtual events and international collaborations while 
+                  maintaining our commitment to cutting-edge AI education and research.
                 </p>
                 <p className="text-gray-300">
-                  Our community now extends beyond OIST, connecting with AI clubs at other universities 
-                  and organizations to create a broader network of AI enthusiasts.
+                  Leading initiatives in ethical AI development and sustainable technology practices.
                 </p>
               </div>
             </div>
