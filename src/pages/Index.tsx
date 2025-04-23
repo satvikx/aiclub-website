@@ -1,4 +1,3 @@
-
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -342,6 +341,46 @@ const Index = () => {
                   <a href="https://drive.google.com/file/d/1AouG6oSi9FJqxgCdS20J2fAw6Yk1_j0R/view" className="border-2 border-ai-green text-ai-green font-orbitron font-semibold px-6 py-2 rounded transition-all hover:bg-ai-green hover:text-ai-black">
                     View Online
                   </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TEDx OIST Section */}
+      <section className="py-20 bg-gradient-to-b from-[#0a0a0a] to-ai-black">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="flex flex-col lg:flex-row items-center gap-12">
+              <div className="lg:w-1/2 order-2 lg:order-1 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 font-orbitron text-ai-white">
+                  <span className="text-ai-green">TEDx OIST</span>
+                </h2>
+                <p className="text-lg text-gray-300 mb-8">
+                  TEDx OIST brings together creative thinkers and doers to share big ideas that inspire our campus and the world beyond.
+                  Discover inspiring talks, hands-on sessions, and a celebration of innovation and curiosity at TEDx OIST. 
+                  Join us in sparking conversations that matter!
+                </p>
+                <a
+                  href="https://www.tedxoist.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn-primary inline-block"
+                >
+                  Visit Website
+                </a>
+              </div>
+              <div className="lg:w-1/2 order-1 lg:order-2 opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
+                <div className="relative">
+                  <div className="absolute -inset-1 bg-ai-green opacity-20 blur-lg rounded-lg"></div>
+                  <div className="relative bg-[#1a1a1a] p-4 rounded-lg border border-gray-800">
+                    <img 
+                      src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80" 
+                      alt="TEDx OIST" 
+                      className="w-full h-auto rounded"
+                    />
+                  </div>
                 </div>
               </div>
             </div>
