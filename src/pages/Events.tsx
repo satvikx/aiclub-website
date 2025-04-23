@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect } from 'react';
 import { X } from 'lucide-react';
-import { Dialog } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogOverlay } from '@/components/ui/dialog';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { eventsData, Event } from '../data/events';
@@ -148,17 +149,12 @@ const Events = () => {
         </div>
       </section>
 
-      {selectedEvent && (
-        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black bg-opacity-70">
-            <div className="bg-[#1a1a1a] max-w-2xl w-full rounded-lg overflow-hidden relative">
-              <button 
-                onClick={closeEventModal}
-                className="absolute top-4 right-4 text-gray-400 hover:text-white z-10"
-                aria-label="Close modal"
-              >
-                <X size={24} />
-              </button>
+      {/* Event Modal using Shadcn Dialog */}
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+        <DialogOverlay />
+        <DialogContent className="bg-[#1a1a1a] text-white border border-gray-800 p-0 max-w-2xl w-full rounded-lg overflow-hidden">
+          {selectedEvent && (
+            <>
               <div className="h-56 overflow-hidden">
                 <img 
                   src={selectedEvent.image} 
@@ -182,10 +178,10 @@ const Events = () => {
                   </button>
                 </div>
               </div>
-            </div>
-          </div>
-        </Dialog>
-      )}
+            </>
+          )}
+        </DialogContent>
+      </Dialog>
 
       <Footer />
     </div>

@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -241,7 +242,7 @@ const Resources = () => {
                       </span>
                     </div>
                     <button 
-                      onClick={backToResourceList}
+                      onClick={() => backToResourceList()}
                       className="absolute top-4 left-4 bg-ai-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-colors"
                     >
                       <svg 
@@ -283,7 +284,7 @@ const Resources = () => {
                     />
                     <div className="mt-8 pt-6 border-t border-gray-800">
                       <button 
-                        onClick={backToResourceList}
+                        onClick={() => backToResourceList()}
                         className="text-ai-green font-medium hover:underline inline-flex items-center"
                       >
                         <svg 
