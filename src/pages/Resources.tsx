@@ -1,5 +1,4 @@
-
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Search } from 'lucide-react';
@@ -12,25 +11,55 @@ const Resources = () => {
   const [selectedType, setSelectedType] = useState<string>('');
   const [selectedResource, setSelectedResource] = useState<Resource | null>(null);
   const [isFullArticleView, setIsFullArticleView] = useState<boolean>(false);
+  const observerRef = useRef<IntersectionObserver | null>(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
+  // Function to setup the animation observer
+  const setupAnimations = () => {
+    // Disconnect previous observer if it exists
+    if (observerRef.current) {
+      observerRef.current.disconnect();
+    }
+
+    // Create a new observer
+    observerRef.current = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('opacity-100');
           entry.target.classList.add('translate-y-0');
-          observer.unobserve(entry.target);
+          observerRef.current?.unobserve(entry.target);
         }
       });
     }, { threshold: 0.1 });
 
-    const hiddenElements = document.querySelectorAll('.animate-on-scroll');
-    hiddenElements.forEach((el) => observer.observe(el));
+    // Reset animations by removing classes first
+    const elementsToAnimate = document.querySelectorAll('.animate-on-scroll');
+    elementsToAnimate.forEach((el) => {
+      el.classList.remove('opacity-100', 'translate-y-0');
+      el.classList.add('opacity-0', 'translate-y-10');
+      observerRef.current?.observe(el);
+    });
+  };
 
+  // Initial animation setup
+  useEffect(() => {
+    setupAnimations();
+    
     return () => {
-      hiddenElements.forEach((el) => observer.unobserve(el));
+      if (observerRef.current) {
+        observerRef.current.disconnect();
+      }
     };
   }, []);
+
+  // Re-run animations when switching back to list view
+  useEffect(() => {
+    if (!isFullArticleView) {
+      // Use a slight delay to ensure the DOM has updated
+      setTimeout(() => {
+        setupAnimations();
+      }, 50);
+    }
+  }, [isFullArticleView]);
 
   useEffect(() => {
     let filtered = [...resourcesData];
@@ -71,14 +100,18 @@ const Resources = () => {
     window.scrollTo(0, 0);
   };
 
-  // Fix: Changed from a function expression to a simple function declaration
   function backToResourceList() {
-    setSelectedResource(null);
     setIsFullArticleView(false);
+    setSelectedResource(null);
+    
+    // Scroll back to the top of the resources section
+    const resourcesSection = document.querySelector('section.py-16');
+    if (resourcesSection) {
+      resourcesSection.scrollIntoView({ behavior: 'smooth' });
+    }
   }
 
   const allTags = Array.from(new Set(resourcesData.flatMap(resource => resource.tags)));
-  
   const allTypes = Array.from(new Set(resourcesData.map(resource => resource.type)));
 
   return (

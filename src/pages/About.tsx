@@ -96,8 +96,8 @@ const About = () => {
                 <div className="absolute -left-[9px] mt-2.5 h-4 w-4 rounded-full bg-ai-green"></div>
                 <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2 mx-5">2022 - Inception</h3>
                 <p className="text-gray-300 mb-4">
-                  The AI Club was established with a vision to create a collaborative space for students 
-                  passionate about artificial intelligence and its applications.
+                  The AI Club was established by the first batch of AIML Dept. with a vision to create a collaborative space for students 
+                  .
                 </p>
                 <p className="text-gray-300">
                   Initial focus was on building a strong foundation through workshops and study groups.
@@ -108,11 +108,11 @@ const About = () => {
                 <div className="absolute -left-[9px] mt-2.5 h-4 w-4 rounded-full bg-ai-green"></div>
                 <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2 mx-5">2023 - Growth</h3>
                 <p className="text-gray-300 mb-4">
-                  Expanded activities to include industry partnerships, hackathons, and TEDx 2023 event 
-                  from leading AI researchers and practitioners.
+                  Expanded activities to include contests, hackathons, and TEDx 2023 event 
+                  inviting leading Entrepreneurs, AI researchers and practitioners.
                 </p>
                 <p className="text-gray-300">
-                  Membership quadrupled as we introduced specialized tracks in machine learning, computer vision, and NLP.
+                  Participation quadrupled as we introduced Cypher 30 and launched the first edition of Edge AI Magazine.
                 </p>
               </div>
 
@@ -121,7 +121,7 @@ const About = () => {
                 <h3 className="text-2xl font-bold font-orbitron text-ai-white mb-2 mx-5">2024 - Innovation</h3>
                 <p className="text-gray-300 mb-4">
                   Launched groundbreaking initiatives including the Ninja Quest Test Series and 
-                  the annual AI Innovation Summit.
+                  the organized TEDx 2024.
                 </p>
                 <p className="text-gray-300">
                   Promoted the Tech Culture in the Campus Space.
