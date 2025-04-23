@@ -71,10 +71,11 @@ const Resources = () => {
     window.scrollTo(0, 0);
   };
 
-  const backToResourceList = () => {
+  // Fix: Changed from a function expression to a simple function declaration
+  function backToResourceList() {
     setSelectedResource(null);
     setIsFullArticleView(false);
-  };
+  }
 
   const allTags = Array.from(new Set(resourcesData.flatMap(resource => resource.tags)));
   
@@ -242,7 +243,7 @@ const Resources = () => {
                       </span>
                     </div>
                     <button 
-                      onClick={() => backToResourceList()}
+                      onClick={backToResourceList}
                       className="absolute top-4 left-4 bg-ai-black bg-opacity-50 text-white p-2 rounded-full hover:bg-opacity-70 transition-colors"
                     >
                       <svg 
@@ -284,7 +285,7 @@ const Resources = () => {
                     />
                     <div className="mt-8 pt-6 border-t border-gray-800">
                       <button 
-                        onClick={() => backToResourceList()}
+                        onClick={backToResourceList}
                         className="text-ai-green font-medium hover:underline inline-flex items-center"
                       >
                         <svg 
