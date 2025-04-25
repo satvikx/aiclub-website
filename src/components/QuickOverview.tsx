@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const QuickOverview = () => { 
 return (
-    <section className="py-20 bg-gradient-to-b from-ai-black via-ai-dark-purple to-[#111] animate-gradient-animation bg-300%">
+    <section className="py-20 bg-gradient-to-b from-ai-black via-ai-dark-purple to-[#111] animate-gradient-animation bg-150%">
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto text-center mb-16 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6 font-orbitron text-ai-white relative inline-block">
@@ -18,7 +18,7 @@ return (
               </div>
     
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="glass-card p-8 rounded-lg transform hover:scale-105 transition-all duration-300 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
+                <div className="glass-card p-8 rounded-lg transform hover:scale-105 transition-all duration-300 translate-y-10 transition-all duration-700 animate-on-scroll">
                   <div className="inline-block bg-[#222] bg-opacity-70 backdrop-blur-sm p-3 rounded-lg mb-4 glow-shadow">
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
@@ -44,7 +44,7 @@ return (
                   </p>
                 </div>
     
-                <div className="glass-card p-8 rounded-lg transform hover:scale-105 transition-all duration-300 opacity-0 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
+                <div className="glass-card p-8 rounded-lg transform hover:scale-105 transition-all duration-300 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
                   <div className="inline-block bg-[#222] bg-opacity-70 backdrop-blur-sm p-3 rounded-lg mb-4 glow-shadow">
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
@@ -68,7 +68,7 @@ return (
                   </p>
                 </div>
     
-                <div className="glass-card p-8 rounded-lg transform hover:scale-105 transition-all duration-300 opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
+                <div className="glass-card p-8 rounded-lg transform hover:scale-105 transition-all duration-300 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
                   <div className="inline-block bg-[#222] bg-opacity-70 backdrop-blur-sm p-3 rounded-lg mb-4 glow-shadow">
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
