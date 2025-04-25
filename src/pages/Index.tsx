@@ -53,8 +53,8 @@ const Index = () => {
 
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Dynamic gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[rgba(18,18,18,0.8)] via-[rgba(126,105,171,0.3)] to-[rgba(18,18,18,0.9)] animate-gradient-animation z-10"></div>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-ai-black bg-opacity-70 z-10"></div>
         
         {/* Parallax background */}
         <div ref={heroRef} className="absolute inset-0 z-0">
@@ -62,7 +62,7 @@ const Index = () => {
         </div>
         
         <div className="container mx-auto px-4 z-20 text-center">
-          <div className="glass-panel p-8 rounded-2xl">
+          <div className="p-8 rounded-2xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-ai-white mb-4 font-orbitron leading-tight">
               Welcome to <span className="text-ai-green">AI Club</span>
             </h1>
@@ -108,14 +108,13 @@ const Index = () => {
       <FeaturedEvents/>
 
       {/* Annual Magazine Section */}
-      <section className="py-20 bg-gradient-to-b from-ai-deep-blue via-[#111] to-[#0a0a0a] animate-gradient-animation bg-300%">
+      <section className="py-20 bg-[#111]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12">
               <div className="lg:w-1/2 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
                 <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-to-br from-purple-400/20 to-pink-400/20 opacity-70 blur-xl rounded-lg animate-pulse"></div>
-                  <div className="relative glass-card rounded-lg p-4">
+                  <div className="relative rounded-lg p-4 bg-[#1a1a1a] shadow-lg border border-gray-800">
                     <img 
                       src="https://ik.imagekit.io/satvik/AIC/Satvik.jpg" 
                       alt="AI Insights Magazine Cover" 
@@ -150,7 +149,7 @@ const Index = () => {
       </section>
 
       {/* TEDx OIST Section */}
-      <section className="py-20 bg-gradient-to-b from-[#0a0a0a] via-[#141414] to-ai-black animate-gradient-animation bg-300%">
+      <section className="py-20 bg-[#0a0a0a]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -175,8 +174,7 @@ const Index = () => {
               </div>
               <div className="lg:w-1/2 order-1 lg:order-2 opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
                 <div className="relative">
-                  <div className="absolute -inset-1 bg-gradient-to-br from-blue-400/20 to-red-400/20 opacity-70 blur-xl rounded-lg animate-pulse"></div>
-                  <div className="relative glass-card rounded-lg p-4">
+                  <div className="relative rounded-lg p-4 bg-[#1a1a1a] shadow-lg border border-gray-800">
                     <img 
                       src="https://ik.imagekit.io/satvik/AIC/temp.JPG" 
                       alt="TEDx OIST" 

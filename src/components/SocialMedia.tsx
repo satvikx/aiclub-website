@@ -19,25 +19,25 @@ const SocialMedia= () => {
 
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           <a href="https://instagram.com/aicluboist" target="_blank" rel="noopener noreferrer" 
-            className="glass-card p-8 rounded-lg flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
+            className="card p-8 rounded-lg flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
             <InstagramIcon size={40} className="text-ai-green mb-4" />
             <span className="text-ai-white font-orbitron font-medium">Instagram</span>
           </a>
           
           <a href="https://www.linkedin.com/company/103163427" target="_blank" rel="noopener noreferrer" 
-            className="glass-card p-8 rounded-lg flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
+            className="card p-8 rounded-lg flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
             <LinkedinIcon size={40} className="text-ai-green mb-4" />
             <span className="text-ai-white font-orbitron font-medium">LinkedIn</span>
           </a>
           
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" 
-            className="glass-card p-8 rounded-lg flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
+            className="card p-8 rounded-lg flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
             <FacebookIcon size={40} className="text-ai-green mb-4" />
             <span className="text-ai-white font-orbitron font-medium">Facebook</span>
           </a>
           
           <a href="https://youtube.com/@aicluboist" target="_blank" rel="noopener noreferrer" 
-            className="glass-card p-8 rounded-lg flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 delay-300 animate-on-scroll">
+            className="card p-8 rounded-lg flex flex-col items-center justify-center transform hover:scale-105 transition-all duration-300 hover:shadow-[0_0_20px_rgba(199,242,65,0.3)] opacity-0 translate-y-10 transition-all duration-700 delay-300 animate-on-scroll">
             <YoutubeIcon size={40} className="text-ai-green mb-4" />
             <span className="text-ai-white font-orbitron font-medium">YouTube</span>
           </a>
