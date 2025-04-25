@@ -54,7 +54,7 @@ const Index = () => {
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-ai-black bg-opacity-70 z-10"></div>
+        <div className="absolute inset-0 bg-ai-black bg-opacity-90 z-10"></div>
         
         {/* Parallax background */}
         <div ref={heroRef} className="absolute inset-0 z-0">
@@ -149,7 +149,7 @@ const Index = () => {
       </section>
 
       {/* TEDx OIST Section */}
-      <section className="py-20 bg-[#0a0a0a]">
+      <section className="py-20 bg-[#111]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12">

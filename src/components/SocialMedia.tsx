@@ -5,7 +5,7 @@ const SocialMedia= () => {
     {/* Social Media Section */}
     return (
         <div>
-      <section className="py-20 bg-[#0a0a0a]">
+      <section className="py-20 bg-[#111]">
       <div className="container mx-auto px-4">
         <div className="max-w-5xl mx-auto text-center mb-16 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 font-orbitron text-ai-white relative inline-block">
