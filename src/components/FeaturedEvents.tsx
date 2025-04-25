@@ -1,14 +1,16 @@
+
 import { Link } from 'react-router-dom';
 
 
 const FeaturedEvents = () => {
 return (
     <div>
-    <section className="py-20 bg-[#111]">
+    <section className="py-20 bg-gradient-to-b from-[#111] via-ai-purple to-ai-deep-blue animate-gradient-animation bg-300%">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto text-center mb-16 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-orbitron text-ai-white">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6 font-orbitron text-ai-white relative inline-block">
               Featured <span className="text-ai-green">Events</span>
+              <span className="absolute -bottom-2 left-0 w-full h-px bg-gradient-to-r from-transparent via-ai-green to-transparent"></span>
             </h2>
             <p className="text-lg text-gray-300">
               Explore our key events that bring together technology enthusiasts, industry experts, and beginners alike.
@@ -16,7 +18,7 @@ return (
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="card opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
+            <div className="glass-card rounded-lg overflow-hidden shadow-lg opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=600&q=80" 
@@ -28,10 +30,10 @@ return (
                   <span className="bg-ai-green text-ai-black px-2 py-1 text-xs font-bold rounded">2023</span>
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-6 backdrop-blur-sm bg-black bg-opacity-20">
                 <h3 className="font-orbitron text-xl font-bold mb-2 text-ai-white">Cypher 30 Coding Contest</h3>
                 <p className="text-gray-400 mb-4">A fast-paced coding competition testing algorithmic skills and problem-solving abilities.</p>
-                <Link to="/events" className="text-ai-green font-medium hover:underline inline-flex items-center">
+                <Link to="/events" className="text-ai-green font-medium hover:underline inline-flex items-center group">
                   View Details
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
@@ -43,7 +45,7 @@ return (
                     strokeWidth="2" 
                     strokeLinecap="round" 
                     strokeLinejoin="round"
-                    className="ml-1"
+                    className="ml-1 transform transition-transform duration-300 group-hover:translate-x-1"
                   >
                     <path d="M5 12h14"></path>
                     <path d="m12 5 7 7-7 7"></path>
@@ -52,7 +54,7 @@ return (
               </div>
             </div>
 
-            <div className="card opacity-0 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
+            <div className="glass-card rounded-lg overflow-hidden shadow-lg opacity-0 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=600&q=80" 
@@ -64,10 +66,10 @@ return (
                   <span className="bg-ai-green text-ai-black px-2 py-1 text-xs font-bold rounded">2023</span>
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-6 backdrop-blur-sm bg-black bg-opacity-20">
                 <h3 className="font-orbitron text-xl font-bold mb-2 text-ai-white">Logo Designing Contest TEDx</h3>
                 <p className="text-gray-400 mb-4">Creative design challenge focused on creating impactful visual identities for TEDx events.</p>
-                <Link to="/events" className="text-ai-green font-medium hover:underline inline-flex items-center">
+                <Link to="/events" className="text-ai-green font-medium hover:underline inline-flex items-center group">
                   View Details
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
@@ -79,7 +81,7 @@ return (
                     strokeWidth="2" 
                     strokeLinecap="round" 
                     strokeLinejoin="round"
-                    className="ml-1"
+                    className="ml-1 transform transition-transform duration-300 group-hover:translate-x-1"
                   >
                     <path d="M5 12h14"></path>
                     <path d="m12 5 7 7-7 7"></path>
@@ -88,7 +90,7 @@ return (
               </div>
             </div>
 
-            <div className="card opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
+            <div className="glass-card rounded-lg overflow-hidden shadow-lg opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
               <div className="relative h-48 overflow-hidden">
                 <img 
                   src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=600&q=80" 
@@ -100,10 +102,10 @@ return (
                   <span className="bg-ai-green text-ai-black px-2 py-1 text-xs font-bold rounded">2024</span>
                 </div>
               </div>
-              <div className="p-6">
+              <div className="p-6 backdrop-blur-sm bg-black bg-opacity-20">
                 <h3 className="font-orbitron text-xl font-bold mb-2 text-ai-white">AI Workshop Series</h3>
                 <p className="text-gray-400 mb-4">Hands-on sessions exploring machine learning, deep learning, and practical AI applications.</p>
-                <Link to="/events" className="text-ai-green font-medium hover:underline inline-flex items-center">
+                <Link to="/events" className="text-ai-green font-medium hover:underline inline-flex items-center group">
                   View Details
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
@@ -115,7 +117,7 @@ return (
                     strokeWidth="2" 
                     strokeLinecap="round" 
                     strokeLinejoin="round"
-                    className="ml-1"
+                    className="ml-1 transform transition-transform duration-300 group-hover:translate-x-1"
                   >
                     <path d="M5 12h14"></path>
                     <path d="m12 5 7 7-7 7"></path>
@@ -126,7 +128,7 @@ return (
           </div>
 
           <div className="text-center mt-12 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
-            <Link to="/events" className="btn-primary">View All Events</Link>
+            <Link to="/events" className="btn-primary shadow-lg hover:shadow-[0_0_20px_rgba(199,242,65,0.4)]">View All Events</Link>
           </div>
         </div>
       </section>

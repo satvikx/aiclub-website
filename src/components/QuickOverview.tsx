@@ -1,12 +1,14 @@
+
 import { Link } from 'react-router-dom';
 
 const QuickOverview = () => { 
 return (
-    <section className="py-20 bg-gradient-to-b from-ai-black to-[#111]">
+    <section className="py-20 bg-gradient-to-b from-ai-black via-ai-dark-purple to-[#111] animate-gradient-animation bg-300%">
             <div className="container mx-auto px-4">
               <div className="max-w-5xl mx-auto text-center mb-16 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
-                <h2 className="text-3xl md:text-4xl font-bold mb-6 font-orbitron text-ai-white">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6 font-orbitron text-ai-white relative inline-block">
                   Innovating with <span className="text-ai-green">Artificial Intelligence</span>
+                  <span className="absolute -bottom-2 left-0 w-full h-px bg-gradient-to-r from-transparent via-ai-green to-transparent"></span>
                 </h2>
                 <p className="text-lg text-gray-300">
                   At AI Club, we're passionate about learning, exploring, and implementing AI technologies.
@@ -16,8 +18,8 @@ return (
               </div>
     
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 transform hover:scale-105 transition-all duration-300 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
-                  <div className="inline-block bg-[#222] p-3 rounded-lg mb-4">
+                <div className="glass-card p-8 rounded-lg transform hover:scale-105 transition-all duration-300 opacity-0 translate-y-10 transition-all duration-700 animate-on-scroll">
+                  <div className="inline-block bg-[#222] bg-opacity-70 backdrop-blur-sm p-3 rounded-lg mb-4 glow-shadow">
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       width="28" 
@@ -28,6 +30,7 @@ return (
                       strokeWidth="2" 
                       strokeLinecap="round" 
                       strokeLinejoin="round"
+                      className="animate-float"
                     >
                       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
                       <circle cx="9" cy="7" r="4"></circle>
@@ -41,8 +44,8 @@ return (
                   </p>
                 </div>
     
-                <div className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 transform hover:scale-105 transition-all duration-300 opacity-0 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
-                  <div className="inline-block bg-[#222] p-3 rounded-lg mb-4">
+                <div className="glass-card p-8 rounded-lg transform hover:scale-105 transition-all duration-300 opacity-0 translate-y-10 transition-all duration-700 delay-100 animate-on-scroll">
+                  <div className="inline-block bg-[#222] bg-opacity-70 backdrop-blur-sm p-3 rounded-lg mb-4 glow-shadow">
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       width="28" 
@@ -53,6 +56,7 @@ return (
                       strokeWidth="2" 
                       strokeLinecap="round" 
                       strokeLinejoin="round"
+                      className="animate-float"
                     >
                       <path d="M12 8v4l3 3"></path>
                       <circle cx="12" cy="12" r="10"></circle>
@@ -64,8 +68,8 @@ return (
                   </p>
                 </div>
     
-                <div className="bg-[#1a1a1a] p-8 rounded-lg border border-gray-800 transform hover:scale-105 transition-all duration-300 opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
-                  <div className="inline-block bg-[#222] p-3 rounded-lg mb-4">
+                <div className="glass-card p-8 rounded-lg transform hover:scale-105 transition-all duration-300 opacity-0 translate-y-10 transition-all duration-700 delay-200 animate-on-scroll">
+                  <div className="inline-block bg-[#222] bg-opacity-70 backdrop-blur-sm p-3 rounded-lg mb-4 glow-shadow">
                     <svg 
                       xmlns="http://www.w3.org/2000/svg" 
                       width="28" 
@@ -76,6 +80,7 @@ return (
                       strokeWidth="2" 
                       strokeLinecap="round" 
                       strokeLinejoin="round"
+                      className="animate-float"
                     >
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                       <polyline points="22 4 12 14.01 9 11.01"></polyline>
@@ -89,7 +94,7 @@ return (
               </div>
     
               <div className="text-center mt-12 opacity-0 translate-y-10 transition-all duration-700 delay-300 animate-on-scroll">
-                <Link to="/about" className="text-ai-green font-orbitron font-medium hover:underline text-lg inline-flex items-center">
+                <Link to="/about" className="text-ai-green font-orbitron font-medium hover:underline text-lg inline-flex items-center group">
                   Learn More
                   <svg 
                     xmlns="http://www.w3.org/2000/svg" 
@@ -101,7 +106,7 @@ return (
                     strokeWidth="2" 
                     strokeLinecap="round" 
                     strokeLinejoin="round"
-                    className="ml-2"
+                    className="ml-2 transform transition-transform duration-300 group-hover:translate-x-1"
                   >
                     <path d="M5 12h14"></path>
                     <path d="m12 5 7 7-7 7"></path>
