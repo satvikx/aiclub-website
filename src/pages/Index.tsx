@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
@@ -8,7 +7,6 @@ import FeaturedEvents from '../components/FeaturedEvents';
 import SocialMedia from '../components/SocialMedia';
 
 const Index = () => {
-  // Add fade-in effect on scroll
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
@@ -28,15 +26,12 @@ const Index = () => {
     };
   }, []);
 
-  // Parallax effect reference
   const heroRef = useRef<HTMLDivElement>(null);
 
-  // Add parallax effect
   useEffect(() => {
     const handleScroll = () => {
       if (heroRef.current) {
         const scrollY = window.scrollY;
-        // Move the background at a different rate than the scroll
         heroRef.current.style.transform = `translateY(${scrollY * 0.5}px)`;
       }
     };
@@ -51,16 +46,11 @@ const Index = () => {
     <div className="min-h-screen bg-ai-black overflow-hidden">
       <Navbar />
 
-      {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        {/* Dark overlay */}
+      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-ai-black bg-opacity-90 z-10"></div>
-        
-        {/* Parallax background */}
         <div ref={heroRef} className="absolute inset-0 z-0">
           <div className="h-[120%] w-full bg-[url('https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=1920&q=80')] bg-cover bg-center"></div>
         </div>
-        
         <div className="container mx-auto px-4 z-20 text-center">
           <div className="p-8 rounded-2xl">
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold text-ai-white mb-4 font-orbitron leading-tight">
@@ -101,14 +91,15 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Quick Overview */}
-      <QuickOverview/>
+      <section id="overview">
+        <QuickOverview/>
+      </section>
 
-      {/* Featured Events */}
-      <FeaturedEvents/>
+      <section id="events">
+        <FeaturedEvents/>
+      </section>
 
-      {/* Annual Magazine Section */}
-      <section className="py-20 bg-[#111]">
+      <section id="magazine" className="py-20 bg-[#111]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -148,8 +139,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* TEDx OIST Section */}
-      <section className="py-20 bg-[#111]">
+      <section id="tedx" className="py-20 bg-[#111]">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="flex flex-col lg:flex-row items-center gap-12">
@@ -188,7 +178,9 @@ const Index = () => {
         </div>
       </section>
 
-      <SocialMedia/>
+      <section id="social">
+        <SocialMedia/>
+      </section>
 
       <Footer />
     </div>
